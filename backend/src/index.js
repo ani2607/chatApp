@@ -19,12 +19,12 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: ["https://marvelous-tanuki-93f5f7.netlify.app/",`${process.env.FRONTEND_URI}`],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: 'https://marvelous-tanuki-93f5f7.netlify.app',
+  methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
+  credentials: true // Allow cookies or HTTP credentials
+}));
+app.options("*", cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
