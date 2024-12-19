@@ -20,7 +20,7 @@ const __dirname = path.resolve();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: 'https://marvelous-tanuki-93f5f7.netlify.app',
+  origin: `${process.env.FRONTEND_URI}`,
   methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
   credentials: true // Allow cookies or HTTP credentials
 }));
