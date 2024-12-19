@@ -20,7 +20,7 @@ const __dirname = path.resolve();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: `${process.env.FRONTEND_URI}`,
+  origin: 'https://aniket-chatapp.netlify.app/',
   methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
   credentials: true // Allow cookies or HTTP credentials
 }));
