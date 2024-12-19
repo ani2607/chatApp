@@ -6,11 +6,11 @@ const app = express();
 const server = http.createServer(app);
 
 const io = new Server(server, {
-  cors:{
-    origin:'https://aniket-chatapp.netlify.app/',
-    methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
-    credentials: true // Allow cookies or HTTP credentials
-  },
+  cors : {
+      origin: 'https://aniket-chatapp.netlify.app', // Ensure no trailing slash here
+      methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+      credentials: true, // Include credentials if required
+    }
 });
 
 export function getReceiverSocketId(userId) {
