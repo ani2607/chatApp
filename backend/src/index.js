@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [`${process.env.FRONTEND_URI}`],
+    origin: ["https://marvelous-tanuki-93f5f7.netlify.app/",`${process.env.FRONTEND_URI}`],
     credentials: true,
   })
 );
